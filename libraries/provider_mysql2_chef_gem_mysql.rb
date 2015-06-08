@@ -14,13 +14,13 @@ class Chef
 
           # As a resource: can pass version from calling recipe
           mysql_client 'default' do
-            version new_resource.client_version
+            # version new_resource.client_version
             action :create
           end
 
           gem_package 'mysql2' do
             gem_binary RbConfig::CONFIG['bindir'] + '/gem'
-            version new_resource.gem_version
+            # version new_resource.gem_version
             action :install
           end
         end
